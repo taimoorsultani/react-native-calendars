@@ -18,7 +18,12 @@ import {timelineEvents, getDate} from '../mocks/timelineEvents';
 const INITIAL_TIME = {hour: 9, minutes: 0};
 const EVENTS: TimelineEventProps[] = timelineEvents;
 
-export default class TimelineCalendarScreen extends Component {
+// const containerCalenderStyle = {
+//   backgroundColor: '#DCF2B0',
+//   height: 100
+// };
+
+export default class ThreeDayTimelineCalendarScreen extends Component {
   state = {
     currentDate: getDate(),
     events: EVENTS,
@@ -138,6 +143,7 @@ export default class TimelineCalendarScreen extends Component {
         onMonthChange={this.onMonthChange}
         showTodayButton
         disabledOpacity={0.6}
+        numberOfDays={3}
       >
         <ExpandableCalendar
           firstDay={1}
@@ -153,111 +159,11 @@ export default class TimelineCalendarScreen extends Component {
             selectedDayTextColor: '#FFFFFF',
             selectedDayBackgroundColor: '#27AE60',
             textDisabledColor: '#C5C5C5',
-
-            // event: {
-            //   borderColor: '#FAFAFA',
-            //   borderWidth: 3,
-            //   borderRadius: 10,
-            //   backgroundColor: 'white',
-            //   padding: 10,
-            //   marginBottom: 5,
-            //   shadowColor: '#000',
-            //   shadowOffset: {width: 0, height: 2},
-            //   shadowOpacity: 0.25,
-            //   shadowRadius: 3.84,
-            //   elevation: 5
-            // },
-            // eventTitle: {
-            //   fontSize: 16,
-            //   fontWeight: 'bold'
-            // },
-            // eventSummary: {
-            //   fontSize: 14
-            // },
-            //
-            // timelineContainer: {
-            //   backgroundColor: 'green',
-            //   color: 'green',
-            //   // backgroundColor: '#FAFAFF',
-            //   marginTop: 10,
-            //   flex: 1
-            // },
-            // contentStyle: {
-            //   backgroundColor: 'green'
-            //   // color: 'green',
-            // },
-            // line: {
-            //   backgroundColor: 'green',
-            //   color: 'green'
-            // },
-            // verticalLine: {
-            //   backgroundColor: 'green',
-            //   color: 'green'
-            // },
-            // calendarBackground: 'yellow'
-            // textSectionTitleDisabledColor: 'yellow',
-            // monthTextColor: 'yellow',
-            // arrowColor: 'yellow',
-            // textInactiveColor: 'yellow'
-            // backgroundColor: 'yellow'
-            // selectedDotColor: 'yellow',
-            // disabledArrowColor: 'yellow'
-            // // textDayFontFamily?: TextStyle['fontFamily'];
-            // // textMonthFontFamily?: TextStyle['fontFamily'];
-            // // textDayHeaderFontFamily?: TextStyle['fontFamily'];
-            // // textDayFontWeight?: TextStyle['fontWeight'];
-            // // textMonthFontWeight?: TextStyle['fontWeight'];
-            // // textDayHeaderFontWeight?: TextStyle['fontWeight'];
-            // // textDayFontSize?: number;
-            // // textMonthFontSize?: number;
-            // // textDayHeaderFontSize?: number;
-            // agendaDayTextColor: 'yellow',
-            // agendaDayNumColor: 'yellow',
-            // agendaTodayColor: 'yellow',
-            // agendaKnobColor: 'yellow',
-            // // todayButtonFontFamily?: TextStyle['fontFamily'];
-            // // todayButtonFontWeight?: TextStyle['fontWeight'];
-            // // todayButtonFontSize?: number;
-            // // textDayStyle?: TextStyle;
-            // // dotStyle?: object;
-            // // arrowStyle?: ViewStyle;
-            // todayBackgroundColor: 'yellow',
-            // disabledDotColor: 'yellow',
-            // inactiveDotColor: 'yellow',
-            // todayDotColor: 'yellow',
-            // todayButtonTextColor: 'yellow',
-            // todayButtonPosition: 'yellow',
-            // // arrowHeight?: number;
-            // // arrowWidth?: number;
-            // // weekVerticalMargin?: number;
-            // // stylesheet?: {
-            // // calendar?: {
-            // // main?: object;
-            // // header?: object;
-            // // };
-            // // day?: {
-            // // basic?: object;
-            // // period?: object;
-            // // };
-            // // dot?: object;
-            // // marking?: object;
-            // // 'calendar-list'?: {
-            // // main?: object;
-            // // };
-            // // agenda?: {
-            // // main?: object;
-            // // list?: object;
-            // // };
-            // // expandable?: {
-            // // main?: object;
-            // // };
-            // // };
           }}
-          // headerStyle={{backgroundColor: 'pink', marginTop: 0}}
-          // calendarStyle={{backgroundColor: 'red', marginTop: 0}}
         />
+
         <TimelineList
-          events={eventsByDate}
+           events={eventsByDate}
           // events={{}}
           timelineProps={this.timelineProps}
           showNowIndicator

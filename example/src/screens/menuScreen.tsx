@@ -40,16 +40,16 @@ const MenuScreen = (props: Props) => {
         options: {
           topBar: {
             title: {
-              text: props?.weekView ? 'WeekCalendar' : screen
+              text: props?.weekView ? 'WeekCalendar' : screen,
             },
             backButton: {
               testID: 'back',
               showTitle: false, // iOS only
-              color: Platform.OS === 'ios' ? '#2d4150' : undefined
-            }
-          }
-        }
-      }
+              color: Platform.OS === 'ios' ? '#2d4150' : undefined,
+            },
+          },
+        },
+      },
     });
   };
 
@@ -69,6 +69,7 @@ const MenuScreen = (props: Props) => {
         {renderEntry(testIDs.menu.AGENDA, 'Agenda', 'AgendaScreen')}
         {renderEntry(testIDs.menu.EXPANDABLE_CALENDAR, 'Expandable Calendar', 'ExpandableCalendarScreen')}
         {renderEntry(testIDs.menu.TIMELINE_CALENDAR, 'Timeline Calendar', 'TimelineCalendarScreen')}
+        {renderEntry(testIDs.menu.THREE_DAY_TIMELINE_CALENDAR, 'Three Day Timeline Calendar', 'ThreeDayTimelineCalendarScreen')}
         {renderEntry(testIDs.menu.WEEK_CALENDAR, 'Week Calendar', 'ExpandableCalendarScreen', {weekView: true})}
         {renderEntry(testIDs.menu.PLAYGROUND, 'Playground', 'Playground')}
         <View style={styles.switchContainer}>
@@ -85,12 +86,12 @@ export default MenuScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   image: {
     margin: 30,
     width: 90,
-    height: 90
+    height: 90,
   },
   menu: {
     width: 300,
@@ -99,13 +100,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#7a92a5'
+    borderColor: '#7a92a5',
   },
   menuText: {
     fontSize: 18,
-    color: '#2d4150'
+    color: '#2d4150',
   },
   switchContainer: {
-    margin: 20
-  }
+    margin: 20,
+  },
 });
